@@ -1,0 +1,215 @@
+﻿body {
+  padding-top: 60px;
+}
+@media (max-width: 980px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+.help-inline {
+    line-height: 1.6em !important;
+} 
+
+.controls {
+    line-height: 0px !important;
+}
+
+.control-group {
+    margin-bottom: 3px !important;
+}
+
+span.title {
+    -moz-background-size: 80px;
+    -o-background-size: 80px;
+    -webkit-background-size: 80px;
+    background: url(/content/images/arms.png) no-repeat left center; 
+    background-size: 80px;
+}
+ #region HTML RESET 
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot,
+thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu,
+nav, section, summary, time, mark, audio, video {
+    font: inherit;
+    margin: 0;
+}
+
+ #endregion 
+
+html {
+    background: #EFEFEF;
+    color: black;
+    padding: 0;
+}
+
+body {
+    background-color: transparent;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+h1, h2, h3 {
+    color: #777;
+    letter-spacing: -1px !important;
+    text-transform: uppercase;
+}
+
+section.main { margin-top: 80px; }
+
+.navbar .brand {
+    height: 48px;
+    margin-bottom: -8px;
+    padding: 6px 30px 12px 30px;
+}
+
+h2.page-title { font-size: 32px; }
+
+.brand .title {
+    -webkit-text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+    color: #0081C2;
+    float: left;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 145%;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin: 2% 0;
+    padding-left: 50px;
+    text-decoration: none;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+    text-transform: initial;
+}
+
+span.title {
+    -moz-background-size: 80px;
+    -o-background-size: 80px;
+    -webkit-background-size: 80px;
+    background: url(/content/images/arms.png) no-repeat left center; /* For IE 6 and 7 */
+    background-size: 80px;
+}
+
+.page-splash {
+    -moz-backface-visibility: hidden;
+    -moz-transition: opacity 0.1s linear;
+    -o-transition: opacity 0.1s linear;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: opacity 0.1s linear;
+    backface-visibility: hidden;
+    background-color: #1f1f1f;
+    height: 100%;
+    left: 0;
+    opacity: 0.2;
+    pointer-events: auto;
+    position: fixed;
+    top: 0;
+    transition: opacity 0.1s linear;
+    width: 100%;
+}
+
+.page-splash-message {
+    -webkit-text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+    color: #808080;
+    background-color: #ffffff;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 400%;
+    font-weight: normal;
+    margin: 10% 0 0 0;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+    text-transform: uppercase;
+}
+
+.page-progress-bar { margin: 5% 30% 0 30%; }
+
+.toast { font-weight: normal; }
+
+.toast-info { background-color: #194D7B; }
+
+.toast-bottom-right { bottom: 50px; }
+
+.navbar-content-center { text-align: center; }
+
+footer a { font-weight: bold; }
+
+footer span {
+    font-size: 18px;
+    padding: 10px 80px;
+}
+
+/**************************/
+ Boostrap overrides      
+
+.navbar .btn, .navbar .btn-group { margin-top: 16px; }
+
+.navbar-fixed-top .navbar-inner {
+    border-width: 0;
+    padding-bottom: 0;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    padding-top: 0;
+}
+
+.navbar-fixed-bottom .navbar-inner { padding: 6px; }
+
+.navbar { text-transform: uppercase; }
+
+.loader .page-progress-bar { margin: 14px 0 0 0; }
+
+.loader { visibility: hidden; }
+
+.loader.active { visibility: visible; }
+
+.btn {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-info {
+    background-color: #0081C2;
+    background-image: -moz-linear-gradient(top, #77CCFF, #194D7B);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#77CCFF), to(#194D7B));
+    background-image: -webkit-linear-gradient(top, #77CCFF, #194D7B);
+    background-image: -o-linear-gradient(top, #77CCFF, #194D7B);
+    background-image: linear-gradient(to bottom, #77CCFF, #194D7B);
+    background-repeat: repeat-x;
+    border-color: #77CCFF #2f96b4 #194D7B;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff77CCFF', endColorstr='#ff194D7B', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
+    background-color: #0081C2;
+    background-color: #0081C2;
+    *background-color: #0081C2;
+    background-color: #194D7B;
+    color: white;
+}
+
+.btn-info:active,
+.btn-info.active {
+    background-color: #0081C2 \9;
+    background-color: #194D7B \9;
+}
+
+/* End Boostrap overrides  */
+/***************************/
+
+@media only screen and (max-width: 979px) {
+    .page-splash-message { font-size: 150%; }
+
+    .navbar-fixed-bottom { position: fixed; }
+
+    footer span {
+        font-size: 14px;
+        padding: 10px 50px;
+    }
+}

@@ -1,0 +1,6 @@
+coverage
+typings
+node_modules
+npm-debug.log
+*.js*
+*.map

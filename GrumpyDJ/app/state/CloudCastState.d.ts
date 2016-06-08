@@ -1,0 +1,3 @@
+﻿interface CloudCastState {
+    cloudCastResults :  CloudCastResult
+}

@@ -1,0 +1,16 @@
+﻿<section>
+    <div class="jumbotron">
+        <h1 data-bind="html: displayName"></h1>
+        <p>This is a small example of how to use the Kendo UI grid with Twitter Bootstrap and replace the inbuilt kendo pop up editor.</p>
+        <p> To read the blog series that accompanies this project click <a href="http://www.greaterheights.net/post/kendo-bootstrap-grid-example">here</a>.</p>        
+    </div>
+
+    <h3>Features</h3>
+    <ul data-bind="foreach: features">
+        <li data-bind="html: $data"></li>
+    </ul>
+    <h3>Useful links</h3>
+    <ul data-bind="foreach: references">
+        <li><a data-bind="attr: {href: url}, text: name" target="_blank"></a></li>
+    </ul>
+</section>

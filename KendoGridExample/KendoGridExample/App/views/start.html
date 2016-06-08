@@ -1,0 +1,37 @@
+﻿<p class="lead">
+    This is a kendo grid configured to use a Web API controller and the Twitter Bootstrap Modal instead of the default kendo popup.
+</p>
+<div id="exampleGrid"></div>
+<div id="popUpUserEditor" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+</div>
+<script id="userEditor" type="text/x-kendo-template">    
+    <div id="userDetails" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">User Details</h4>
+            </div>
+            <div class="modal-body">
+                <div class="control-group">
+                    <label class="control-label" for="firstname">First name</label>
+                    <div class="controls">
+                        <input id="firstname" name="firstname" data-bind="value: FirstName" data-role="text" aria-required="true" data-val="true" data-val-length="The field Firstname must be a string with a maximum length of 255." data-val-length-max="255" data-val-required="The Firstname field is required.">
+                        <span class="help-inline field-validation-valid" data-valmsg-for="firstname" data-valmsg-replace="true"></span>
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="surname">Surname</label>
+                    <div class="controls">
+                        <input id="surname" name="surname" data-bind="value: Surname" data-role="text" aria-required="true" data-val="true" data-val-length="The field Surname must be a string with a maximum length of 255." data-val-length-max="255" data-val-required="The Surname field is required.">
+                        <span class="help-inline field-validation-valid" data-valmsg-for="surname" data-valmsg-replace="true"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="btn" data-dismiss="modal" id="cancel">Cancel</a>
+                <a class="btn" id="apply">Apply</a>
+                <a class="btn btn-primary" id="save">Save changes</a>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</script>
