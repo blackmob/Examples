@@ -1,4 +1,4 @@
-# GrumpDJ
+# GrumpyDJ
 
 An example react, redux, typescript application.
 
