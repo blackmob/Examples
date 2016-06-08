@@ -5,4 +5,5 @@ node_modules
 npm-debug.log
 *.js
 !devServer.js
+!webpack.config.js
 *.map
