@@ -13,11 +13,11 @@ const initialState: CloudCastState = {
     cloudCastResults: {data : [] , paging : {next : null, previous : null}},
 };
 
-export default handleActions<CloudCastState>({
-    [LOAD_SHOWS_REQUEST]: (state: CloudCastState, action: Action): CloudCastState => {
+export default handleActions<CloudCastState, CloudCastPayload>({
+    [LOAD_SHOWS_REQUEST]: (state: CloudCastState, action: Action<CloudCastPayload>): CloudCastState => {
         return assign({}, state, { cloudCastResults : {data : [] , paging : {next : null, previous : null}} }) as CloudCastState;
     },
-    [RECEIVE_SHOWS_REQUEST]: (state: CloudCastState, action: Action): CloudCastState => {
+    [RECEIVE_SHOWS_REQUEST]: (state: CloudCastState, action: Action<CloudCastPayload>): CloudCastState => {
         return assign({}, state, { cloudCastResults : { data : action.payload.data, paging: action.payload.paging }}) as CloudCastState;
     }
 }, initialState);

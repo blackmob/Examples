@@ -7,10 +7,6 @@ import * as types from "../constants/ActionTypes";
 import {DataService} from "../services/dataService";
 import {push} from "react-router-redux";
 
-interface CloudCastPayload {
-    data : Datum[],
-    paging : Paging    
-}
 
 export const loadShowsRequest = createAction<CloudCastPayload>(
     types.LOAD_SHOWS_REQUEST, () => ({

@@ -46,7 +46,7 @@ describe("emotion actions", () => {
     it('dispatches RECEIVE_EMOTION_REQUEST', () => {
             let state = deepFreeze(initialState);
             var store = mockStore(state, [{ type: RECEIVE_EMOTION_REQUEST, payload: {faces : face, url : "test"}}], done);
-            store.dispatch(receiveEmotionsRequest(face, "test"));
+            store.dispatch(receiveEmotionsRequest({faces:face, url: "test"}));
     });
     
     pit('dispatches fetchEmotions', () => {

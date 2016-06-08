@@ -25,7 +25,7 @@ describe('shows reducer', () => {
 
         var state = deepFreeze(initialState);
        
-        var newState = cloudCast(state, { type: LOAD_SHOWS_REQUEST, payload: initialState });
+        var newState = cloudCast(state, { type: LOAD_SHOWS_REQUEST, payload: {data: [], paging : null} });
 
         expect(newState).toEqual(initialState);
     });
