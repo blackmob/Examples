@@ -31,13 +31,20 @@ Make sure you have typings installed
 typings install
 ```
 
-### 4. Run the app
+### 4. Update Microsoft Emotion API key 
+
+Go to https://www.microsoft.com/cognitive-services/en-us/emotion-api and select the 
+'Get started for free' button, sign up for an account and get your free key.
+
+Search for and replace the following string '[your key here]]' in the file app/services/daaService.ts  
+
+### 5. Run the app
 
 ```
 npm start
 ```
 
-### 5. Run the unit tests
+### 6. Run the unit tests
 
 ``` 
 npm test
