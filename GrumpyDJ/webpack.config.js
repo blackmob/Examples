@@ -6,10 +6,11 @@ module.exports = {
         root: [path.resolve('./app')],
         extensions: ["", ".tsx", ".ts", ".js", ".d.ts"]
     },
-    devtool: 'source-map',
+    devtool: 'eval',
     entry:{
         bundle:[
-        'webpack-hot-middleware/client',
+        'webpack-dev-server/client?http://0.0.0.0:3000',
+        'webpack/hot/only-dev-server',
         './app/main.tsx'           
         ]
     },
@@ -25,13 +26,13 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 exclude: /node_modules/,
                 include: path.join(__dirname, 'app'),
-                loader: 'babel-loader!ts-loader'
+                loaders: ['react-hot','babel-loader','ts-loader']
             }, {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 include: path.join(__dirname, 'app'),
                 exclude: path.join(path.join(__dirname, 'app'),'scripts'),
-                loader: 'babel'
+                loaders: ['react-hot','babel-loader']
             },
               { test: /\.css$/,loader: 'style!css'},
               { test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
