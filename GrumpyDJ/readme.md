@@ -36,7 +36,7 @@ typings install
 Go to https://www.microsoft.com/cognitive-services/en-us/emotion-api and select the 
 'Get started for free' button, sign up for an account and get your free key.
 
-Search for and replace the following string '[your key here]]' in the file app/services/daaService.ts  
+Search for and replace the following string '[your key here]]' in the file app/services/dataService.ts  
 
 ### 5. Run the app
 
