@@ -42,7 +42,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Drawing" />
-    <Reference Include="EmguCV" />
+    <Reference Include="EmguCV" />    
   </ItemGroup>
   <ItemGroup>
     <Content Include="OpenTK.dll.config">
@@ -141,4 +141,5 @@
     </When>
   </Choose>
   <Import Project="..\packages\EmguCV\build\$(__paket__EmguCV_targets).targets" Condition="Exists('..\packages\EmguCV\build\$(__paket__EmguCV_targets).targets')" Label="Paket" />
+  <Import Project="..\.paket\paket.targets" />
 </Project>

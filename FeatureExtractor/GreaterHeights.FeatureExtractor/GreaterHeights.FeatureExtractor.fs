@@ -15,8 +15,7 @@ module FeatureExtractor =
 
     let detectKeyPoints (image : Image<Gray, byte>) =        
         use surfDetector = new SURF(100.0)     
-        let result = surfDetector.Detect(image)
-        result |> Array.iter (fun item -> image.Draw("X", Point.Round(item.Point), FontFace.HersheyPlain, 1.5, new Gray(0.)) )
+        surfDetector.Detect(image) |> Array.iter (fun item -> image.Draw("X", Point.Round(item.Point), FontFace.HersheyPlain, 1.5, new Gray(0.)) )        
         image
 
     let processFile (path : string) = 
