@@ -8,21 +8,26 @@ open Emgu.CV.XFeatures2D
 open Emgu.CV.Structure
 open Emgu.CV.UI
 open Emgu.CV.Util
+
 module FeatureExtractor = 
-    let edgeDetect (image : Image<Gray, byte> ) =         
-        let sobel = image.Sobel(0, 1, 3).Add(image.Sobel(1, 0, 3)).AbsDiff(new Gray(0.0));
-        new Image<Gray, byte>(sobel.Bitmap)
+    let findShape (image : Image<Bgr,byte>) (thresh : float)= 
+        let contoursDetected = new VectorOfVectorOfPoint()
+        let hierarchy = new Mat()                 
+        use preProcessed = image.Convert<Gray, byte>().SmoothBlur(3,3).ThresholdBinary(new Gray(thresh), new Gray(255.)).Erode(10).Canny(thresh,thresh * 3.)
+        CvInvoke.FindContours(preProcessed , contoursDetected, hierarchy, RetrType.Tree, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple, Point(0,0));
+        contoursDetected.ToArrayOfArray() |> Array.iter (fun item -> image.DrawPolyline(item, true, new Bgr(Color.Black) ,1,LineType.AntiAlias))
+        image  
+    let processFile path thresh = 
+        match File.Exists(path) with
+        | true ->            
+            use image = new Image<Bgr,byte>(path)
+            let imageWithFeatures = findShape image thresh 
+            imageWithFeatures.Save(Path.Combine(Path.GetDirectoryName(path), Path.GetFileNameWithoutExtension(path) + Path.GetRandomFileName() + Path.GetExtension(path)))
+            path
+        | false -> path 
 
-    let detectKeyPoints (image : Image<Gray, byte>) =        
-        use surfDetector = new SURF(100.0)     
-        surfDetector.Detect(image) |> Array.iter (fun item -> image.Draw("X", Point.Round(item.Point), FontFace.HersheyPlain, 1.5, new Gray(0.)) )        
-        image
+        
+         
 
-    let processFile (path : string) = 
-        if File.Exists(path) then
-            use image = new Image<Gray,byte>(path)
-            let imageWithFeatures = edgeDetect image |> image.Add |> detectKeyPoints
-            Some(imageWithFeatures.Save(Path.Combine(Path.GetDirectoryName(path), Path.GetFileNameWithoutExtension(path) + Path.GetRandomFileName() + Path.GetExtension(path))))
-        else
-            None        
+       
         

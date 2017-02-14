@@ -7,3 +7,5 @@ open System.IO
 open System.Drawing
 #load "GreaterHeights.FeatureExtractor.fs"
 open GreaterHeights.FeatureExtractor
+ 
+Directory.GetFiles(@".\greaterHeights.FeatureExtractor\TestImages","*.jpg") |> Array.iter (fun item -> GreaterHeights.FeatureExtractor.processFile item 128. |> ignore )       
