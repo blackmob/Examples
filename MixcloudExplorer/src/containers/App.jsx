@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import DevTools from './DevTools';
-import { Provider } from 'react-redux';
+import 'office-ui-fabric-core/dist/css/fabric.css'
+
+import React, { Component } from 'react';
+
 import CityPicker from './CityPicker';
+import DevTools from './DevTools';
+import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { Provider } from 'react-redux';
+import { setBaseUrl } from 'office-ui-fabric-react/lib/Utilities';
+
+setBaseUrl('./build/');
 
 class App extends Component {
   render() {
@@ -11,17 +17,12 @@ class App extends Component {
     return (
 
   <Provider store={store}>
-      <div className="App">
-        <DevTools/>
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <Fabric>
+        <div className="App">
+          <DevTools/>
+          <CityPicker/>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <CityPicker/>
-      </div>
+      </Fabric>
       </Provider>
     );
   }

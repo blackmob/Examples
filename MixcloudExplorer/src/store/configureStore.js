@@ -1,9 +1,10 @@
-'use strict';
-import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import {applyMiddleware, compose, createStore} from 'redux';
+
+import DevTools from '../containers/DevTools';
+import createLogger from 'redux-logger';
 import rootReducer from '../reducers';
 import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
-import DevTools from '../containers/DevTools';
+
 const enableHotLoader = (store) => {
     if (module.hot) {
         module.hot.accept('../reducers', () => {
